@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Ecstasy Solutions | Transform Your Digital Future</title>
+    <meta name="description" content="Premium web & mobile app development, AI solutions, and cloud services. Get a free consultation & build your next big idea. Hyderabad's top tech partner.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --dark-bg: #0a0a1a;
+            --dark-card: #111827;
+            --gray-light: #f3f4f6;
+            --text-main: #1f2937;
+            --text-secondary: #6b7280;
+            --text-white: #ffffff;
+            --text-offwhite: #e5e7eb;
+            --border-glass: rgba(255,255,255,0.15);
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-offwhite);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1e1e2e; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            font-weight: 600;
+            border-radius: 100px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            background: white;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, var(--primary), var(--accent-cyan));
+            color: white;
+            box-shadow: 0 8px 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px var(--primary-glow);
+            filter: brightness(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--primary);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.15), transparent 70%);
+        }
+
+        .hero-bg-orb {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(99,102,241,0.2), transparent);
+            border-radius: 50%;
+            top: -20%;
+            right: -20%;
+            z-index: 0;
+            animation: float 12s infinite alternate;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: rgba(99,102,241,0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(to right, #ffffff, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat span {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .stat p {
+            font-size: 0.85rem;
+            margin: 0;
+            color: #94a3b8;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 1.2rem;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .card-1 { top: 10%; left: -10%; }
+        .card-2 { bottom: 15%; right: -5%; animation-delay: 1s; }
+        .floating-card i { font-size: 1.6rem; color: var(--accent-cyan); }
+        
+        .trust-bar {
+            padding: 2rem 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            opacity: 0.7;
+        }
+        
+        .logos span { font-weight: bold; font-size: 1rem; letter-spacing: 1px; color: #94a3b8; }
+
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #c7d2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-sub {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-icon i { font-size: 2rem; color: var(--primary); }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+        .service-card p { color: #9ca3af; line-height: 1.6; }
+
+        .form-section {
+            background: linear-gradient(145deg, #0f0f1f, #05050f);
+            position: relative;
+            border-radius: 3rem;
+            margin: 2rem 0 4rem;
+            padding: 3rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .form-left h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+        .highlight-text { color: var(--accent-cyan); }
+        
+        .contact-form {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(12px);
+            padding: 2rem;
+            border-radius: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 1rem;
+            background: #1e1e2e;
+            border: 1px solid #2d2d3f;
+            border-radius: 1rem;
+            color: white;
+            font-family: inherit;
+            transition: 0.2s;
+        }
+        
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-message.success { background: #064e3b; color: #34d399; display: flex; gap: 0.5rem; align-items: center; }
+        .form-message.error { background: #7f1a1a; color: #fca5a5; display: flex; gap: 0.5rem; align-items: center; }
+
+        .testimonial {
+            background: var(--dark-card);
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .cta-banner {
+            background: linear-gradient(115deg, #1e1b4b, #0f172a);
+            border-radius: 2rem;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 2rem 0;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        @media (max-width: 1024px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero p { max-width: 100%; }
+            .hero-stats { justify-content: center; }
+            .form-grid { grid-template-columns: 1fr; }
+            .floating-card { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+        
+        @media (max-width: 640px) {
+            .form-row { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.8rem; }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 99;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover { transform: scale(1.1); background: #128C7E; }
+        
+        /* Loading spinner */
+        .btn-loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .btn-loading span {
+            visibility: hidden;
+        }
+        
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .btn {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-orb"></div>
+        <div class="container">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i> India's Trusted Tech Partner
+                </div>
+                <h1>Scale Your Business With<br> <span style="color: var(--accent-cyan);">AI-Driven</span> Digital Solutions</h1>
+                <p>Web & Mobile Apps | AI Integration | Cloud Migration | Enterprise Software — We deliver future-ready tech that drives revenue and operational efficiency.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#contactFormSection" class="btn btn-primary" id="heroCtaBtn">
+                        <span>🚀 Get Free Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#services" class="btn btn-outline">Explore Solutions <i class="fas fa-play-circle"></i></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span>50+</span><p>Project Delivered</p></div>
+                    <div class="stat"><span>98%</span><p>Client Retention</p></div>
+                    <div class="stat"><span>24/7</span><p>Support</p></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/600x500/111827/white?text=✨+Digital+Innovation+✨" alt="digital innovation" style="object-fit: cover;">
+                <div class="floating-card card-1">
+                    <i class="fas fa-brain"></i>
+                    <span>AI-powered automation</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-chart-line"></i>
+                    <span>+40% efficiency</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="logos">
+                <span><i class="fab fa-google"></i> Google Partner</span>
+                <span><i class="fas fa-cloud"></i> AWS Select</span>
+                <span><i class="fas fa-shield-alt"></i> ISO Certified</span>
+                <span><i class="fas fa-award"></i> 5-star rating</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">What We Do Best</div>
+            <div class="section-sub">End-to-end digital solutions tailored for startups, enterprises, and scale-ups.</div>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-code"></i></div><h3>Web & App Dev</h3><p>React, Next.js, Flutter, iOS/Android — pixel-perfect, high-performance.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-microchip"></i></div><h3>AI & ML Solutions</h3><p>LLM integration, predictive analytics, automation that cuts costs.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div><h3>Cloud & DevOps</h3><p>AWS, Azure, GCP — scalable cloud architecture & CI/CD pipelines.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-lock"></i></div><h3>Cybersecurity</h3><p>Security audits, compliance, data protection for modern threats.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Gen Form Section - WORKING FRONTEND ONLY -->
+    <div class="container" id="contactFormSection">
+        <div class="form-section">
+            <div class="form-grid">
+                <div class="form-left">
+                    <h2>Ready to <span class="highlight-text">transform your idea</span> into reality?</h2>
+                    <p style="margin: 1rem 0 1.5rem; color: #cbd5e1;">Fill out the form and our experts will reach out within 24 hours with a custom roadmap & quote.</p>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 12px;"></i> Free 30-min strategy call</li>
+                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 12px;"></i> No-obligation project estimate</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 12px;"></i> 100% confidential consultation</li>
+                    </ul>
+                    <div class="testimonial" style="margin-top: 2rem;">
+                        <i class="fas fa-quote-left" style="font-size: 2rem; opacity: 0.5;"></i>
+                        <p style="margin: 1rem 0;">"Ecstasy Solutions built our enterprise platform in record time. Their AI integration increased our sales by 35%. Highly recommended!"</p>
+                        <strong>— Rakesh Bandi, Founder and Managing Director of RK Medias</strong>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.7rem;">Request a Callback</h3>
+                    <div id="formStatus" class="form-message"></div>
+                    
+                    <!-- FORM SUBMITS TO FORMSUBMIT.CO - NO BACKEND NEEDED -->
+                    <form id="leadForm" action="https://formsubmit.co/info@ecstasysolutions.org" method="POST">
+                        <!-- Hidden configuration for FormSubmit -->
+                        <input type="hidden" name="_subject" value="New Lead from Ecstasy Solutions Website">
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting Ecstasy Solutions! We've received your message and will get back to you within 24 hours. Best regards, Ecstasy Solutions Team">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_next" value="https://ecstasysolutions.org?success=true">
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="text" name="First Name" id="firstName" placeholder="First name *" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="Last Name" id="lastName" placeholder="Last name *" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="Email" id="email" placeholder="Work email *" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" name="Phone" id="phone" placeholder="Phone number">
+                        </div>
+                        <div class="input-group">
+                            <select name="Budget" id="budget">
+                                <option value="">Estimated budget (optional)</option>
+                                <option>Less than $5k</option>
+                                <option>$5k - $20k</option>
+                                <option>$20k - $50k</option>
+                                <option>$50k+</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea rows="3" name="Message" id="message" placeholder="Tell us about your project *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                            <span>Send Message →</span>
+                        </button>
+                        <p style="font-size: 0.7rem; margin-top: 1rem; text-align: center;">We respect your privacy. No spam, ever.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="container">
+        <div class="cta-banner">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Start Your Digital Journey Today</h3>
+            <p style="margin-bottom: 1.5rem;">Join 50+ satisfied brands that trust Ecstasy Solutions for futuristic tech.</p>
+            <a href="#contactFormSection" class="btn btn-primary" style="background: white; color: var(--primary-dark);">Claim Free Consultation →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logos" style="justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+                <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+                <span><i class="fab fa-instagram"></i> Instagram</span>
+                <span><i class="fas fa-envelope"></i> info@ecstasysolutions.org</span>
+            </div>
+            <p>&copy; 2025 Ecstasy Solutions — Hyderabad • UAE • Global. Crafting Digital Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917075768117" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        (function() {
+            const form = document.getElementById('leadForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('formStatus');
+            
+            // Validation functions
+            function validateName(name) { 
+                return /^[A-Za-z\s]{2,}$/.test(name.trim()); 
+            }
+            
+            function validateEmail(email) { 
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()); 
+            }
+            
+            function validateMessage(msg) { 
+                return msg.trim().length > 10; 
+            }
+            
+            function showMessage(type, text) {
+                statusDiv.className = `form-message ${type}`;
+                statusDiv.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${text}`;
+                statusDiv.style.display = 'flex';
+                
+                // Auto hide after 6 seconds
+                setTimeout(() => {
+                    if (statusDiv.style.display === 'flex') {
+                        statusDiv.style.display = 'none';
+                    }
+                }, 6000);
+            }
+            
+            // Handle form submission with validation
+            form.addEventListener('submit', function(e) {
+                // Get values
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Validate
+                if (!validateName(firstName)) {
+                    e.preventDefault();
+                    showMessage('error', 'Please enter a valid first name (letters only, min 2 characters).');
+                    document.getElementById('firstName').focus();
+                    return false;
+                }
+                
+                if (!validateName(lastName)) {
+                    e.preventDefault();
+                    showMessage('error', 'Please enter a valid last name (letters only, min 2 characters).');
+                    document.getElementById('lastName').focus();
+                    return false;
+                }
+                
+                if (!validateEmail(email)) {
+                    e.preventDefault();
+                    showMessage('error', 'Please enter a valid email address.');
+                    document.getElementById('email').focus();
+                    return false;
+                }
+                
+                if (!validateMessage(message)) {
+                    e.preventDefault();
+                    showMessage('error', 'Please describe your project in at least 10 characters.');
+                    document.getElementById('message').focus();
+                    return false;
+                }
+                
+                // Show loading state on button
+                submitBtn.classList.add('btn-loading');
+                submitBtn.disabled = true;
+                
+                // Show sending message
+                showMessage('success', 'Sending your message...');
+                
+                // Form will submit normally to FormSubmit.co
+                // The page will redirect to the success page
+                return true;
+            });
+            
+            // Check URL for success parameter (if redirected back)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') && urlParams.get('success') === 'true') {
+                showMessage('success', '✓ Message sent successfully! Our team will contact you within 24 hours.');
+                // Remove success parameter from URL without refreshing
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+            
+            // Input styling for better UX
+            const inputs = document.querySelectorAll('#leadForm input, #leadForm textarea, #leadForm select');
+            inputs.forEach(inp => {
+                inp.addEventListener('focus', () => {
+                    inp.style.borderColor = '#6366f1';
+                    inp.style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)';
+                });
+                inp.addEventListener('blur', () => {
+                    inp.style.borderColor = '#2d2d3f';
+                    inp.style.boxShadow = 'none';
+                });
+            });
+            
+            // Smooth scroll for CTA buttons
+            const ctaBtns = document.querySelectorAll('#heroCtaBtn, .cta-banner .btn, a[href="#contactFormSection"]');
+            ctaBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    if (btn.getAttribute('href') === '#contactFormSection') {
+                        e.preventDefault();
+                        document.getElementById('contactFormSection').scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
